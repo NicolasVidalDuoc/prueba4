@@ -6,12 +6,12 @@
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
 <script>
-    $(document).ready(function() {
-      $('.slider').bxSlider({
-          mode: 'fade',//horizontal, vertical, fade
-          auto: true,
-          pause: 2000
-      });
+    $(document).ready(function () {
+        $('.slider').bxSlider({
+            mode: 'fade',//horizontal, vertical, fade
+            auto: true,
+            pause: 2000
+        });
     });
 </script>
 {% endblock %}
@@ -36,70 +36,26 @@
         <img src="{% static 'app/img/banner/pastel4.jpg' %}" alt="">
     </div>
 </div>
-
+{% load humanize %}
 <h2>Productos</h2>
 <div class="productos">
+    {% for p in productos %}
+    <div class="producto">
 
-<div class="producto">
+        <div class="contenedor_producto">
+            {% if p.image %}
+            <img src="{{ p.image.url }}" alt="imagen producto">
+            {% endif %}
+            <div class="detalle">
+                <h5>{{ p.tipo | capfirst }}</h5>
+                <h2>{{ p.nombre | title }}</h2>
+                <h3>${{ p.precio | intcomma }}</h3>
+            </div>
 
-    <div class="contenedor_producto">
-
-        <img src="{% static 'app/img/pastel4.jpg' %}" alt="imagen producto">
-        <div class="detalle">
-            <h5>Torta</h5>
-            <h2>Frutos del bosque</h2>
-            <h3>$10.990</h3>
         </div>
 
     </div>
-
-</div>
-
-<div class="producto">
-
-    <div class="contenedor_producto">
-
-        <img src="{% static 'app/img/pastel5.jpg' %}" alt="imagen producto">
-        <div class="detalle">
-            <h5>Cheesecake</h5>
-            <h2>Frutilla y arándano</h2>
-            <h3>$13.990</h3>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="producto">
-
-    <div class="contenedor_producto">
-
-        <img src="{% static 'app/img/pastel6.jpg' %}" alt="imagen producto">
-        <div class="detalle">
-            <h5>Postres</h5>
-            <h2>Crema y frutas</h2>
-            <h3>$5.990</h3>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="producto">
-
-    <div class="contenedor_producto">
-
-        <img src="{% static 'app/img/pastel7.jpg' %}" alt="imagen producto">
-        <div class="detalle">
-            <h5>Torta</h5>
-            <h2>Mil hojas</h2>
-            <h3>$12.990</h3>
-        </div>
-
-    </div>
-
-</div>
-
+    {% endfor %}
 
 </div>
 
