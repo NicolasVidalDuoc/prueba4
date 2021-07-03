@@ -13,6 +13,7 @@ class Producto(models.Model):
     descripcion = models.TextField()
     tipo = models.ForeignKey(Tipo, on_delete=models.PROTECT)
     fecha_fabricacion = models.DateField()
-
+    image = models.ImageField(upload_to="productos", null=True)
+    
     def __str__(self):
         return self.nombre
