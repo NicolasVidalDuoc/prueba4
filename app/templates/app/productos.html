@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Galeria de productos</h1>
-</body>
-</html>
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+{% endblock %}
+
+{% block contenido %}
+
+<h2>Galeria de algunos de nuestros productos</h2>
+           <br><br>
+           <div class="galeria">
+                <a data-fancybox="gallery" href="{% static 'app/img/productos/pastel4.jpg' %}"><img src="{% static 'app/img/productos/pastel4.jpg' %}"></a>
+                <a data-fancybox="gallery" href="{% static 'app/img/productos/pastel5.jpg' %}"><img src="{% static 'app/img/productos/pastel5.jpg' %}"></a>
+                <a data-fancybox="gallery" href="{% static 'app/img/productos/pastel6.jpg' %}"><img src="{% static 'app/img/productos/pastel6.jpg' %}"></a>
+                <a data-fancybox="gallery" href="{% static 'app/img/productos/pastel7.jpg' %}"><img src="{% static 'app/img/productos/pastel7.jpg' %}"></a>
+                <a data-fancybox="gallery" href="{% static 'app/img/productos/pastel8.jpg' %}"><img src="{% static 'app/img/productos/pastel8.jpg' %}"></a>     
+                <a data-fancybox="gallery" href="{% static 'app/img/productos/pastel9.jpg' %}"><img src="{% static 'app/img/productos/pastel9.jpg' %}"></a>
+                <a data-fancybox="gallery" href="{% static 'app/img/productos/pastel10.jpg' %}"><img src="{% static 'app/img/productos/pastel10.jpg' %}"></a>   
+                <a data-fancybox="gallery" href="{% static 'app/img/productos/pastel11.jpg' %}"><img src="{% static 'app/img/productos/pastel11.jpg' %}"></a>        
+           </div>
+           
+
+{% endblock %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CakeHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    {% load static %}
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
+    <link rel="shortcut icon" href="img/pastel.png">
+</head>
+<body>
+
+    
+    <header id="header">
+        <img class="menu" src="{% static 'app/img/menuiconwhite.png' %}" alt="menu" id="menu">
+        <div class="contenedor_logo">
+            <img  class="logo"  src="{% static 'app/img/pastel.png' %}" alt="logo">
+        </div>
+
+        <div>
+            
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a href="index.html">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">CONTACTO</a>
+                    </li>
+                    <li>
+                        <a href="galeria.html">PRODUCTOS</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <div id="contenido">
+            
+        {% block contenido %}
+        {% endblock %}
+
+    </div>
+
+    <hr>
+
+    <footer>
+        <div class="marcas">
+            <img src="{% static 'app/img/footer/pastel2.png' %}" alt="">
+            <img src="{% static 'app/img/footer/pastel3.png' %}" alt="">
+            <img src="{% static 'app/img/footer/pastel4.png' %}" alt="">
+            <img src="{% static 'app/img/footer/pastel5.png' %}" alt="">
+        </div>
+        <div class="logo_footer">
+            <h1>CakeHouse - Todos los derechos reservados</h1>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{% static 'app/js/menu.js' %}"></script>
+
+    {% block js %}
+
+    {% endblock %}
+
+</body>
+</html>
