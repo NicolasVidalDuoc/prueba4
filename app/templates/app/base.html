@@ -38,12 +38,16 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'contacto' %}">CONTACTO<span class="sr-only">(current)</span></a>
                 </li>
+                {% if perms.app.add_producto %}
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'agregar_producto' %}">AGREGAR<span class="sr-only">(current)</span></a>
                 </li>
+                {% endif %}
+                {% if perms.app.view_producto %}
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'listar_productos' %}">CARRITO<span class="sr-only">(current)</span></a>
                 </li>
+                {% endif %}
                 {% if user.is_authenticated %}
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'logout' %}">LOGOUT<span class="sr-only">(current)</span></a>
