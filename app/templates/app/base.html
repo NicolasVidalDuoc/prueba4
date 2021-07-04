@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CakeHouse</title>
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     {% block css %}
     {% endblock %}
     <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
     <link rel="shortcut icon" href="img/pastel.png">
 </head>
+
 <body>
 
-    
-    <header id="header">
-        <img class="menu" src="{% static 'app/img/menuiconwhite.png' %}" alt="menu" id="menu">
-        <div class="contenedor_logo">
-            <img  class="logo"  src="{% static 'app/img/pastel.png' %}" alt="logo">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'home' %}">CakeHouse</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">INICIO<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'productos' %}">PRODUCTOS<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'contacto' %}">CONTACTO<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
         </div>
-
-        <div>
-            
-            <nav id="nav">
-                <ul>
-                    <li>
-                        <a href="{% url 'home' %}">INICIO</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'contacto' %}">CONTACTO</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'productos' %}">PRODUCTOS</a>
-                    </li>
-                </ul>
-            </nav>
-
-        </div>
-
-    </header>
+    </nav>
 
     <div id="contenido">
-            
+
         {% block contenido %}
         {% endblock %}
 
@@ -50,6 +55,7 @@
 
     <hr>
 
+    
     <footer>
         <div class="marcas">
             <img src="{% static 'app/img/footer/pastel2.png' %}" alt="">
@@ -61,6 +67,7 @@
             <h1>CakeHouse - Todos los derechos reservados</h1>
         </div>
     </footer>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="{% static 'app/js/menu.js' %}"></script>
@@ -70,4 +77,5 @@
     {% endblock %}
 
 </body>
+
 </html>
