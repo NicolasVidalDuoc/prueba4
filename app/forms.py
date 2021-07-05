@@ -12,6 +12,9 @@ class ContactoForm(forms.ModelForm):
 
 class ProductoForm(forms.ModelForm):
 
+    nombre = forms.CharField(min_length=3, max_length=50)
+    image = forms.ImageField(required=False)
+
     class Meta:
         model = Producto
         fields = '__all__'
