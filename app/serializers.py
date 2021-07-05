@@ -5,10 +5,11 @@ from rest_framework import serializers
 class TipoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tipo
-        fields = '__all__'
+        fields = ['url', 'nombre']
 
 class ProductoSerializer(serializers.ModelSerializer):
     nombre_tipo = serializers.CharField(read_only=True, source="tipo.nombre")
     class Meta:
         model = Producto
-        fields = '__all__'
+        fields = ['url', 'nombre', 'nombre_tipo', 'precio', 'descripcion', 'tipo', 'fecha_fabricacion', 'image']
+        

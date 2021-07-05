@@ -37,23 +37,19 @@
     </div>
 </div>
 {% load humanize %}
-<h2>Productos</h2>
-<div class="productos">
+<h3 class="container" style="text-align: center;">Productos</h3>
+<br>
+<div class="productos container">
     {% for p in productos %}
-    <div class="producto">
-
-        <div class="contenedor_producto">
-            {% if p.image %}
-            <img src="{{ p.image.url }}" alt="imagen producto">
-            {% endif %}
-            <div class="detalle">
-                <h5>{{ p.tipo | capfirst }}</h5>
-                <h2>{{ p.nombre | title }}</h2>
-                <h3>${{ p.precio | intcomma }}</h3>
-            </div>
-
+    <div class="card" style="width: 18rem; margin-right: 20px; margin-bottom: 2rem;">
+        <img src="{{ p.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h3 class="card-title">{{ p.tipo | capfirst }}</h3>
+            <p class="card-text">{{ p.nombre | title }}</p>
+            <p class="card-text">{{ p.descripcion | title }}</p>
+            <p class="card-text">${{ p.precio | intcomma }}</p>
+            <a href="#" class="btn btn-primary">Comprar</a>
         </div>
-
     </div>
     {% endfor %}
 

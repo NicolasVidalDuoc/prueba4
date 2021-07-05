@@ -9,9 +9,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-h1,h2 {
-    font-family: 'Balsamiq Sans', cursive;
-}
+
 
 label.error {
     color: darkred;
