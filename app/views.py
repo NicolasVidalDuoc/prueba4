@@ -1,3 +1,5 @@
+from django.contrib.auth.models import User, Group
+from rest_framework import permissions
 from django.http.response import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto, Tipo
@@ -8,17 +10,29 @@ from django.http import Http404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, permission_required
 from rest_framework import serializers, viewsets
-from .serializers import ProductoSerializer, TipoSerializer
+from .serializers import ProductoSerializer, TipoSerializer, UserSerializer, GroupSerializer
 
 # Create your views here.
 
 class TipoViewset(viewsets.ModelViewSet):
     queryset = Tipo.objects.all()
     serializer_class = TipoSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 class ProductoViewset(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class UserViewset(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class GroupViewset(viewsets.ModelViewSet):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 
 

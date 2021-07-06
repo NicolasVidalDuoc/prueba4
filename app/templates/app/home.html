@@ -46,7 +46,7 @@
         <div class="card-body">
             <h3 class="card-title">{{ p.tipo | capfirst }}</h3>
             <p class="card-text">{{ p.nombre | title }}</p>
-            <p class="card-text">{{ p.descripcion | title }}</p>
+            <p class="card-text">{{ p.descripcion }}</p>
             <p class="card-text">${{ p.precio | intcomma }}</p>
             <a href="#" class="btn btn-primary">Comprar</a>
         </div>

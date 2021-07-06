@@ -1,10 +1,12 @@
 from django.urls import path, include
-from .views import home, contacto, productos, agregar_producto, listar_productos, modificar_producto, eliminar_producto, registro, ProductoViewset, TipoViewset
+from .views import GroupViewset, UserViewset, home, contacto, productos, agregar_producto, listar_productos, modificar_producto, eliminar_producto, registro, ProductoViewset, TipoViewset
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('producto', ProductoViewset)
 router.register('tipo', TipoViewset)
+router.register('user', UserViewset)
+router.register('group', GroupViewset)
 
 urlpatterns = [
     path('', home, name="home"),
